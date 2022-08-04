@@ -1,24 +1,26 @@
 public class Recursion {
+    public static long[] fibCache;
     public static void main(String[] args) {
+        int n = 64;
+        fibCache =new long[n+1];
         System.out.println(fac(15));
-        System.out.println(fib(9));
+        System.out.println(fib(n));
     }
     public static int fac(int n){
         if(n==2)
             return 2;
         return n* fac(n-1);
     }
-    public static int fib(int n){
+    public static long fib(int n){
         if(n<=2)
             return 1;
-        return fib(n-1) + fib(n-2);
+        if(fibCache[n]!= 0)
+            return fibCache[n];
+        long nthFib =  fib(n-1) + fib(n-2);
+        fibCache[n] = nthFib;
+        return nthFib;
     }
-    public static void tower(){
 
-    }
-    public static void move(){
-
-    }
 }
 /*
     1>B 2>C 1>C 3>B

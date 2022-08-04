@@ -14,4 +14,22 @@ public class Io{
         outPut.print(85);
         outPut.close();
     }
+    public double std(double[] arr){
+        if( arr.length == 0)
+            return 0.0;
+        double m = mean(arr);
+        double sum = 0;
+        for(int i = 0; i< arr.length;i++){
+            sum+= Math.pow(arr[i]-m,2);
+        }
+        return Math.sqrt(sum/ arr.length);
+    }
+
+    private double mean(double[] arr) {
+        double s = 0;
+        for (double e : arr){
+            s+= e;
+        }
+        return s/arr.length;
+    }
 }
