@@ -14,21 +14,13 @@ public class Recursion {
     public static long fib(int n){
         if(n<=2)
             return 1;
+
         if(fibCache[n]!= 0)
             return fibCache[n];
+
         long nthFib =  fib(n-1) + fib(n-2);
         fibCache[n] = nthFib;
+
         return nthFib;
     }
-
 }
-/*
-    1>B 2>C 1>C 3>B
-
-
-
-    1
-    2
-    3
-    A   B   C
- */
